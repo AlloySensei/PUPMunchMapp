@@ -2,16 +2,17 @@
     <string name="app_name">UI_PUPMunchMapp</string>
     <string name="appName">PUP MunchMapp</string>
     <string name="tagLine">The food app for PUPians.</string>
+
     <string name="btntxtLogin">LOG IN</string>
     <string name="txtForgotPassword">Forgot password</string>
     <string name="txtNoAccount">Do not have an account?</string>
     <string name="textSignUp">Sign up now</string>
-    <string name="title_activity_home_page">HomePage</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="title_activity_login_page">LoginPage</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+
+    <string name="txtHome">Home</string>
+    <string name="txtOrders">Orders</string>
+    <string name="txtUserProfile">User profile</string>
 
 </resources>

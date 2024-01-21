@@ -2,7 +2,13 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="LaunchPage">
+        <State />
+      </entry>
       <entry key="LoginPage">
+        <State />
+      </entry>
+      <entry key="MainActivity">
         <State />
       </entry>
       <entry key="MainNavigationC">
@@ -20,6 +26,9 @@
           </targetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-01-20T16:54:55.590291100Z" />
         </State>
+      </entry>
+      <entry key="SignupActivity">
+        <State />
       </entry>
       <entry key="app">
         <State>

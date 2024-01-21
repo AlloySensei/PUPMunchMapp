@@ -20,5 +20,5 @@
         tools:listitem="@layout/list_orders"
         android:divider="@android:color/transparent"
         android:dividerHeight="8.0sp"/>
-    
+
 </androidx.constraintlayout.widget.ConstraintLayout>

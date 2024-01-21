@@ -1,61 +1,108 @@
 package com.example.ui_pupmunchmapp;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link OrdersFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.ui_pupmunchmapp.databinding.ActivityMainNavigationCBinding;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class OrdersFragment extends Fragment {
 
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    // Declare lists to hold data
+    private ArrayList<String> stallNameList = new ArrayList<>();
+    private ArrayList<String> orderRefNumList = new ArrayList<>();
+    private ArrayList<String> customerNameList = new ArrayList<>();
+    private ArrayList<String> orderDateList = new ArrayList<>();
+    private ArrayList<String> orderTimeList = new ArrayList<>();
 
-    private String mParam1;
-    private String mParam2;
-
-    public OrdersFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment OrdersFragment.
-     */
-    public static OrdersFragment newInstance(String param1, String param2) {
-        OrdersFragment fragment = new OrdersFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    // Adapter for the ListView
+    private ListAdapter adapter;
+    ArrayList<ListOrders> ordersList = new ArrayList<>();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+        // Initialize your arrays here
+        String[] stallNames = {"Stall1", "Stall2", "Stall3"};
+        String[] orderRefNums = {"123", "456", "789"};
+        String[] customerNames = {"Cus1", "Cus2", "Cus3"};
+        String[] orderDates = {"01-20", "01-21", "01-22"};
+        String[] orderTimes = {"01:30", "2:30", "3:30"};
+
+        // Populate ArrayLists with the arrays
+        stallNameList.addAll(Arrays.asList(stallNames));
+        orderRefNumList.addAll(Arrays.asList(orderRefNums));
+        customerNameList.addAll(Arrays.asList(customerNames));
+        orderDateList.addAll(Arrays.asList(orderDates));
+        orderTimeList.addAll(Arrays.asList(orderTimes));
+
+        // Generate the list of ListOrders objects
+        ordersList = generateOrdersList();
+
+        // Initialize the adapter with the sample data
+        adapter = new ListAdapter(requireContext(), ordersList);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_orders, container, false);
+        View view = inflater.inflate(R.layout.fragment_orders, container, false);
+
+        // Find the ListView and set the adapter
+        ListView listView = view.findViewById(R.id.orderListView);
+        listView.setAdapter(adapter);
+        listView.setClickable(true);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ListOrders selectedOrder = (ListOrders) parent.getItemAtPosition(position);
+
+                // Create OrderDetails and set arguments
+                OrderDetails orderDetailsFragment = new OrderDetails();
+                Bundle bundle = new Bundle();
+                bundle.putString("StallName", selectedOrder.stallName);
+                bundle.putString("OrderRefNum", selectedOrder.orderRefNum);
+                bundle.putString("CustomerName", selectedOrder.customerName);
+                bundle.putString("OrderDate", selectedOrder.date);
+                bundle.putString("OrderTime", selectedOrder.time);
+                orderDetailsFragment.setArguments(bundle);
+
+                // Replace the fragment with OrderDetailsFragment
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.orderListView, orderDetailsFragment);
+                fr.commit();
+            }
+        });
+        return view;
+    }
+
+    // Method to generate a list of ListOrders objects
+    private ArrayList<ListOrders> generateOrdersList() {
+        ArrayList<ListOrders> ordersList = new ArrayList<>();
+
+        // Assuming all lists have the same size, you can iterate through one of them
+        for (int i = 0; i < stallNameList.size(); i++) {
+            ListOrders order = new ListOrders(
+                    stallNameList.get(i),
+                    orderRefNumList.get(i),
+                    customerNameList.get(i),
+                    orderDateList.get(i),
+                    orderTimeList.get(i)
+            );
+            ordersList.add(order);
+        }
+        return ordersList;
     }
 }

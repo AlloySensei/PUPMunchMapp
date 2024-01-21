@@ -2,17 +2,54 @@
     <string name="app_name">UI_PUPMunchMapp</string>
     <string name="appName">PUP MunchMapp</string>
     <string name="tagLine">The food app for PUPians.</string>
-
+    <!--For log in page-->
     <string name="btntxtLogin">LOG IN</string>
     <string name="txtForgotPassword">Forgot password</string>
     <string name="txtNoAccount">Do not have an account?</string>
     <string name="textSignUp">Sign up now</string>
     <string name="title_activity_login_page">LoginPage</string>
+    <string name="email">Email</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-
+    <string name="category">Category</string>
+    <!--For MainNavigationC fragments-->
     <string name="txtHome">Home</string>
     <string name="txtOrders">Orders</string>
     <string name="txtUserProfile">User profile</string>
+    <!--For Home fragment-->
+    <string name="txtChangeView">Change view</string>
+    <!--For Search fragment-->
+    <string name="txtSearch">Search</string>
+    <string name="txtSearchQuery">Type any food you want...</string>
+    <string name="txtSearchHint">Search here</string>
+    <!--For UserProfile fragment-->
+    <string name="txtEmail">Display email</string>
+    <string name="txtUsername">Display username</string>
+    <string name="txtPassword">Display password</string>
+    <string name="txtCategory">Display user category</string>
+    <string name="txtEditProfile">Edit Profile</string>
+    <!--For EditProfile fragment-->
+    <string name="txtUpdate">Update</string>
+    <string name="txtEditPic">Edit picture</string>
+    <!--For Orders fragment-->
+    <string name="txtOrderRefNum">Display order ref num</string>
+    <string name="txtOrderStall">Display stall name</string>
+    <string name="txtCustomerName">Display customer name</string>
+    <string name="txtOrderDate">Display order date</string>
+    <string name="txtOrderTime">Display order time</string>
+    <!--For OrderDetails fragment-->
+    <string name="orderDetails">Order details</string>
+    <string name="stallName">Stall name:</string>
+    <string name="orderRefNum">Reference number:</string>
+    <string name="customerName">Customer name:</string>
+    <string name="orderTime">Order time:</string>
+    <string name="orderDate">Order date:</string>
+    <string name="orderedItems">Ordered items</string>
+    <!--For order list table-->
+    <string name="col1">Number</string>
+    <string name="col2">Item name</string>
+    <string name="col3">Quantity</string>
+    <string name="col4">Price</string>
+    <string name="col5">Total</string>
 
 </resources>

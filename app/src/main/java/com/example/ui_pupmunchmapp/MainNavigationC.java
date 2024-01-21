@@ -23,17 +23,19 @@ public class MainNavigationC extends AppCompatActivity {
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
 
             int itemId = item.getItemId();
-            if (itemId == R.id.home) {
-                replaceFragment(new HomeFragment());
-            } else if (itemId == R.id.orders) {
-                replaceFragment(new OrdersFragment());
-            } else if (itemId == R.id.userprofile) {
-                replaceFragment(new UserProfileFragment());
-            }
-
+                if (itemId == R.id.home) {
+                    replaceFragment(new HomeFragment());
+                } else if (itemId == R.id.search) {
+                    replaceFragment(new SearchFragment());
+                } else if (itemId == R.id.orders) {
+                        replaceFragment(new OrdersFragment());
+                } else if (itemId == R.id.userprofile) {
+                    replaceFragment(new UserProfileFragment());
+                }
             return true;
         });
     }
+
 
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();

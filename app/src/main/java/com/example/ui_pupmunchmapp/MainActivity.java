@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -39,6 +40,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    private void setSupportActionBar(Toolbar toolbar) {
+
+    }
+
     @Override
     public boolean onNavigationItemsSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -53,8 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_orders:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new OrdersFragment()).commit();
                 break;
-                
-                
+
             case R.id.nav_logout:
                 Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
                 break;

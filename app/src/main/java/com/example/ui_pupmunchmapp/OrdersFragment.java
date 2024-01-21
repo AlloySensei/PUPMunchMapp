@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -59,6 +60,9 @@ public class OrdersFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_orders, container, false);
 
+//        TextView stallNameTextView = view.findViewById(R.id.stallNameTextView);
+//        stallNameTextView.setText(getString(R.string.stallName));
+
         // Find the ListView and set the adapter
         ListView listView = view.findViewById(R.id.orderListView);
         listView.setAdapter(adapter);
@@ -81,7 +85,8 @@ public class OrdersFragment extends Fragment {
 
                 // Replace the fragment with OrderDetailsFragment
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.orderListView, orderDetailsFragment);
+                fr.replace(R.id.ordersContainer, orderDetailsFragment);
+                fr.addToBackStack(null);
                 fr.commit();
             }
         });

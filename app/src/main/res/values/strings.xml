@@ -35,8 +35,8 @@
     <string name="txtOrderRefNum">Display order ref num</string>
     <string name="txtOrderStall">Display stall name</string>
     <string name="txtCustomerName">Display customer name</string>
-    <string name="txtOrderDate">Display order date</string>
-    <string name="txtOrderTime">Display order time</string>
+    <string name="txtOrderDate">Date</string>
+    <string name="txtOrderTime">Time</string>
     <!--For OrderDetails fragment-->
     <string name="orderDetails">Order details</string>
     <string name="stallName">Stall name:</string>

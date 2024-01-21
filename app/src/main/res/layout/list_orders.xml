@@ -18,12 +18,24 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:id="@+id/listImage"
-            android:src="@drawable/orderimage1"
+            android:src="@drawable/applogocircle"
             android:scaleType="centerCrop"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             app:shapeAppearanceOverlay="@style/roundImage"/>
+
+        <TextView
+            android:id="@+id/listdOrderRefNum"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/listImage"
+            android:text="@string/txtOrderRefNum"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
 
         <TextView
             android:id="@+id/listdOrderStallName"
@@ -31,31 +43,42 @@
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_toEndOf="@+id/listImage"
             android:text="@string/txtOrderStall"
             android:textColor="@color/black"
             android:textSize="20sp" />
         
         <TextView
-            android:id="@+id/listdOrderRefNum"
+            android:id="@+id/listdCustomerName"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="55dp"
             android:layout_toEndOf="@+id/listImage"
-            android:text="@string/txtOrderRefNum"
-            android:textColor="@color/black"
-            android:textSize="15sp"/>
+            android:text="@string/txtCustomerName"
+            android:textColor="@color/fourthColor"
+            android:textSize="12sp"/>
 
         <TextView
             android:id="@+id/listdOrderDate"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="250dp"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/listImage"
             android:text="@string/txtOrderDate"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/listdOrderTime"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="55dp"
+            android:layout_toEndOf="@+id/listImage"
+            android:text="@string/txtOrderTime"
             android:textColor="@color/black"
             android:textSize="12sp"/>
 

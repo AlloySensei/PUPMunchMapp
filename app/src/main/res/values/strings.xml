@@ -18,6 +18,7 @@
     <string name="txtUserProfile">User profile</string>
     <!--For Home fragment-->
     <string name="txtChangeView">Change view</string>
+    <string name="btnLogOut">Log Out</string>
     <!--For Search fragment-->
     <string name="txtSearch">Search</string>
     <string name="txtSearchQuery">Type any food you want...</string>

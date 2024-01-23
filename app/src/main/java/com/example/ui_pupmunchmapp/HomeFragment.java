@@ -1,5 +1,6 @@
 package com.example.ui_pupmunchmapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +27,11 @@ public class HomeFragment extends Fragment {
 
     private String mParam1;
     private String mParam2;
+
+    Button btnLogOut;
+    FirebaseAuth mAuth;
+    TextView userName;
+    FirebaseUser user;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -42,6 +53,7 @@ public class HomeFragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+
     }
 
     @Override
@@ -50,6 +62,7 @@ public class HomeFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
@@ -57,6 +70,28 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        btnLogOut = view.findViewById(R.id.btnLogOut);
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        userName = view.findViewById(R.id.userName);
+        if(user == null){
+            Intent intent = new Intent(getContext(),LoginPage.class);
+            startActivity(intent);
+        }else {
+            userName.setText(user.getEmail());
+        }
+
+
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getContext(), LoginPage.class);
+                startActivity(intent);
+            }
+        });
+        return view;
     }
 }

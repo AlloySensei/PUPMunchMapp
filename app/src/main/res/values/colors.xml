@@ -6,4 +6,6 @@
     <color name="endColor">#EC8F5E</color>
     <color name="thirdColor">#F1EB90</color>
     <color name="fourthColor">#9FBB73</color>
+    <color name="button_normal_color">#2196F3</color>
+    <color name="button_pressed_color">#1565C0</color>
 </resources>

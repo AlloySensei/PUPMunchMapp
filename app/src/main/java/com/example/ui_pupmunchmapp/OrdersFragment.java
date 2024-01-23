@@ -60,9 +60,6 @@ public class OrdersFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_orders, container, false);
 
-//        TextView stallNameTextView = view.findViewById(R.id.stallNameTextView);
-//        stallNameTextView.setText(getString(R.string.stallName));
-
         // Find the ListView and set the adapter
         ListView listView = view.findViewById(R.id.orderListView);
         listView.setAdapter(adapter);

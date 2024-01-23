@@ -23,6 +23,7 @@
     <string name="txtSearchQuery">Type any food you want...</string>
     <string name="txtSearchHint">Search here</string>
     <!--For UserProfile fragment-->
+    <string name="myProfile">My Profile</string>
     <string name="txtEmail">Display email</string>
     <string name="txtUsername">Display username</string>
     <string name="txtPassword">Display password</string>
@@ -37,6 +38,7 @@
     <string name="txtCustomerName">Display customer name</string>
     <string name="txtOrderDate">Date</string>
     <string name="txtOrderTime">Time</string>
+    <string name="myOrders">My Orders</string>
     <!--For OrderDetails fragment-->
     <string name="orderDetails">Order details</string>
     <string name="stallName">Stall name:</string>
@@ -51,5 +53,13 @@
     <string name="col3">Quantity</string>
     <string name="col4">Price</string>
     <string name="col5">Total</string>
+    <!--For Search fragment-->
+    <string name="foodNameSearchView">Item name here</string>
+    <string name="stallNameSearchView">Stall name here</string>
+    <string name="foodPriceSearchView">Price</string>
+    <!--strings below are from themes.xml-->
+    <string name="appname">Navigation Drawer</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Open Navigation Drawer</string>
 
 </resources>

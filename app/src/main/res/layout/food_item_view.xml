@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="10dp"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/foodImageViewS"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/applogocircle"
+            app:shapeAppearanceOverlay="@style/roundImage"/>
+
+        <TextView
+            android:id="@+id/foodNameTextViewS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/foodNameSearchView"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:layout_toEndOf="@id/foodImageViewS"/>
+
+        <TextView
+            android:id="@+id/stallNameTextViewS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:text="@string/stallNameSearchView"
+            android:textColor="@color/fourthColor"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:layout_toEndOf="@id/foodImageViewS"/>
+
+        <TextView
+            android:id="@+id/foodPriceTextViewS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250dp"
+            android:layout_centerVertical="true"
+            android:text="@string/foodPriceSearchView"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold|italic"
+            android:fontFamily="sans-serif-medium"
+            android:layout_toEndOf="@id/foodImageViewS"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

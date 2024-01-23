@@ -3,9 +3,6 @@
     <style name="Base.Theme.UI_PUPMunchMapp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <string name= "app_name">Navigation Drawer </string>
-        <string name= "open_nav">Open Navigation Drawer </string>
-        <string name= "close_nav">Open Navigation Drawer </string>
         <item name="colorPrimary">@color/startColor</item>
         <item name="colorPrimaryDark">@color/endColor</item>
     </style>

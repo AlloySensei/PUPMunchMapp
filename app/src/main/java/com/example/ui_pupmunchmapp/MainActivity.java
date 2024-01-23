@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar; // Add this import
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -40,29 +41,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void setSupportActionBar(Toolbar toolbar) {
+    public void setSupportActionBar(Toolbar toolbar) {
 
     }
 
     @Override
-    public boolean onNavigationItemsSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.nav_user:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UserFragment()).commit();
-                break;
-
-            case R.id.nav_store:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new StoreFragment()).commit();
-                break;
-
-            case R.id.nav_orders:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new OrdersFragment()).commit();
-                break;
-
-            case R.id.nav_logout:
-                Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
-                break;
-
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.nav_user) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UserFragment()).commit();
+        } else if (itemId == R.id.nav_store) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new StoreFragment()).commit();
+        } else if (itemId == R.id.nav_orders) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new OrdersFragment()).commit();
+        } else if (itemId == R.id.nav_logout) {
+            Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

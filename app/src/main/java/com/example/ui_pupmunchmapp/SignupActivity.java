@@ -77,7 +77,7 @@ public class SignupActivity extends AppCompatActivity {
                     editTextPasswordConfirm.setTextColor(getResources().getColor(android.R.color.holo_red_light));
                 }
 
-                mAuth.signInWithEmailAndPassword(email, password)
+                mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {

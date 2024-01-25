@@ -34,11 +34,11 @@ public class OrdersFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         // Initialize your arrays here
-        String[] stallNames = {"Stall1", "Stall2", "Stall3"};
-        String[] orderRefNums = {"123", "456", "789"};
-        String[] customerNames = {"Cus1", "Cus2", "Cus3"};
-        String[] orderDates = {"01-20", "01-21", "01-22"};
-        String[] orderTimes = {"01:30", "2:30", "3:30"};
+        String[] stallNames = {"Stall1", "Stall2", "Stall3", "Stall1", "Stall2", "Stall3", "Stall1", "Stall2", "Stall3"};
+        String[] orderRefNums = {"123", "456", "789", "123", "456", "789", "123", "456", "789"};
+        String[] customerNames = {"Cus1", "Cus2", "Cus3", "Cus1", "Cus2", "Cus3", "Cus1", "Cus2", "Cus3"};
+        String[] orderDates = {"01-20", "01-21", "01-22", "01-20", "01-21", "01-22", "01-20", "01-21", "01-22"};
+        String[] orderTimes = {"01:30", "2:30", "3:30", "01:30", "2:30", "3:30", "01:30", "2:30", "3:30"};
 
         // Populate ArrayLists with the arrays
         stallNameList.addAll(Arrays.asList(stallNames));

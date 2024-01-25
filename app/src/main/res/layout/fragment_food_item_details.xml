@@ -6,14 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/foodDetailsContainer"
     android:background="@drawable/gradientbg"
     tools:context=".FoodItemDetails">
 
+    <ImageView
+        android:id="@+id/wave"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/wavef2" />
+
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/displayFoodImageView"
+        android:id="@+id/displayFoodImage"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/applogocircle"
         app:shapeAppearanceOverlay="@style/roundImage"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +49,7 @@
         android:id="@+id/titleFoodName"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="25dp"
         android:text="@string/foodName"
         android:textColor="@color/thirdColor"
         android:textSize="16sp"
@@ -46,10 +57,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.10"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleFoodItemDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/displayFoodImage" />
 
     <TextView
-        android:id="@+id/titleStallNameS"
+        android:id="@+id/titleStallName"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -74,13 +85,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.10"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleStallNameS" />
+        app:layout_constraintTop_toBottomOf="@+id/titleStallName" />
 
     <TextView
         android:id="@+id/displayFoodName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="246dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/displaytxtbg"
         android:padding="5dp"
@@ -89,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/titleFoodName"
-        app:layout_constraintTop_toBottomOf="@+id/titleFoodItemDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/displayFoodImage" />
 
     <TextView
         android:id="@+id/displayStallName"
@@ -103,11 +114,11 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/titleStallNameS"
+        app:layout_constraintStart_toEndOf="@+id/titleStallName"
         app:layout_constraintTop_toBottomOf="@+id/displayFoodName" />
 
     <TextView
-        android:id="@+id/displayCustomerName"
+        android:id="@+id/displayFoodPrice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
@@ -121,15 +132,45 @@
         app:layout_constraintStart_toEndOf="@+id/titleFoodPrice"
         app:layout_constraintTop_toBottomOf="@+id/displayStallName" />
 
+    <RelativeLayout
+        android:id="@+id/foodDescription"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/displaytxtbg2"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/displayFoodPrice"
+        style="@style/roundImage">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/itemDescription"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/itemDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtItemDescription"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+    </RelativeLayout>
     <Button
         android:id="@+id/btnPlaceOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/buttonroundborder"
         android:text="@string/btnPlaceOrder"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleFoodPrice"/>
+        app:layout_constraintTop_toBottomOf="@+id/foodDescription"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

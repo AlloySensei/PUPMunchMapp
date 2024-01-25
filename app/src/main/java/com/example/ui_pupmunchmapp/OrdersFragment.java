@@ -94,7 +94,6 @@ public class OrdersFragment extends Fragment {
     private ArrayList<ListOrders> generateOrdersList() {
         ArrayList<ListOrders> ordersList = new ArrayList<>();
 
-        // Assuming all lists have the same size, you can iterate through one of them
         for (int i = 0; i < stallNameList.size(); i++) {
             ListOrders order = new ListOrders(
                     stallNameList.get(i),

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class FoodItemAdapter extends RecyclerView.Adapter<SearchViewHolder> {
+public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemViewHolder> {
 
     Context context;
     List<FoodItem> items;
@@ -21,16 +21,16 @@ public class FoodItemAdapter extends RecyclerView.Adapter<SearchViewHolder> {
 
     @NonNull
     @Override
-    public SearchViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new SearchViewHolder(LayoutInflater.from(context).inflate(R.layout.food_item_view, parent, false));
+    public FoodItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new FoodItemViewHolder(LayoutInflater.from(context).inflate(R.layout.food_item_view, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SearchViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FoodItemViewHolder holder, int position) {
         holder.foodNameView.setText(items.get(position).getItemName());
         holder.stallNameView.setText(items.get(position).getStallName());
-        holder.foodPriceView.setText(items.get(position).getFoodPrice());
-        holder.imageView.setImageResource(items.get(position).getFoodImage());
+        holder.foodPriceView.setText(String.valueOf(items.get(position).getFoodPrice()));
+        holder.foodImageView.setImageResource(items.get(position).getFoodImage());
     }
 
     @Override

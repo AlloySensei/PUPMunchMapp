@@ -57,9 +57,16 @@
     <string name="foodNameSearchView">Item name here</string>
     <string name="stallNameSearchView">Stall name here</string>
     <string name="foodPriceSearchView">Price</string>
+    <!--For FoodItemDetails fragment -->
+    <string name="foodItemDetails">Food Item Details</string>
+    <string name="foodName">Item name:</string>
+    <string name="foodPrice">Item price:</string>
+    <string name="btnPlaceOrder">PLACE ORDER</string>
+
     <!--strings below are from themes.xml-->
     <string name="appname">Navigation Drawer</string>
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Open Navigation Drawer</string>
+
 
 </resources>

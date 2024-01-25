@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradientbg"
+    tools:context=".FoodItemDetails">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/displayFoodImageView"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/applogocircle"
+        app:shapeAppearanceOverlay="@style/roundImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleFoodItemDetails"/>
+
+    <TextView
+        android:id="@+id/titleFoodItemDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="@string/foodItemDetails"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleFoodName"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="@string/foodName"
+        android:textColor="@color/thirdColor"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleFoodItemDetails" />
+
+    <TextView
+        android:id="@+id/titleStallNameS"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/stallName"
+        android:textColor="@color/thirdColor"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleFoodName" />
+
+    <TextView
+        android:id="@+id/titleFoodPrice"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/foodPrice"
+        android:textColor="@color/thirdColor"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleStallNameS" />
+
+    <TextView
+        android:id="@+id/displayFoodName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="246dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/displaytxtbg"
+        android:padding="5dp"
+        android:text="@string/foodNameSearchView"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/titleFoodName"
+        app:layout_constraintTop_toBottomOf="@+id/titleFoodItemDetails" />
+
+    <TextView
+        android:id="@+id/displayStallName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/displaytxtbg"
+        android:padding="5dp"
+        android:text="@string/stallNameSearchView"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/titleStallNameS"
+        app:layout_constraintTop_toBottomOf="@+id/displayFoodName" />
+
+    <TextView
+        android:id="@+id/displayCustomerName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/displaytxtbg"
+        android:padding="5dp"
+        android:text="@string/foodPriceSearchView"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/titleFoodPrice"
+        app:layout_constraintTop_toBottomOf="@+id/displayStallName" />
+
+    <Button
+        android:id="@+id/btnPlaceOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/buttonroundborder"
+        android:text="@string/btnPlaceOrder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleFoodPrice"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

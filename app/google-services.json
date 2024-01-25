@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1037215071902",
+    "project_id": "pupmunchmapp",
+    "storage_bucket": "pupmunchmapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037215071902:android:10651fa33f4dc5b096458f",
+        "android_client_info": {
+          "package_name": "com.example.ui_pupmunchmapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKfxssXt4H2xpwSF2jHD6iSzEBTPz0MOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

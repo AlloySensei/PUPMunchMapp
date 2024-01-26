@@ -3,10 +3,12 @@ package com.example.ui_pupmunchmapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -40,10 +42,13 @@ public class LoginPage extends AppCompatActivity {
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             String email, password;
+
             @Override
             public void onClick(View v) {
                 email = String.valueOf(editTextEmail.getText());
                 password = String.valueOf(editTextPassword.getText());
+
+                hideKeyboard();
 
                 if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginPage.this, "Please enter both email and password", Toast.LENGTH_SHORT).show();
@@ -79,5 +84,13 @@ public class LoginPage extends AppCompatActivity {
 
 
 
+    }
+
+    private void hideKeyboard() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }

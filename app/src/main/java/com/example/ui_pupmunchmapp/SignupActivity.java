@@ -87,6 +87,8 @@ public class SignupActivity extends AppCompatActivity {
                                     // You can navigate to another activity or perform other actions here
                                     Toast.makeText(SignupActivity.this, "Account Created",
                                             Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(),LoginPage.class);
+                                    startActivity(intent);
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.e("AuthenticationFailed", "signInWithEmail:failure", task.getException());

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -42,7 +43,7 @@ public class SearchFragment extends Fragment {
         items.add(new FoodItem("Beef burger B1T1", "Burger Stall", R.drawable.f, 50));
 
         // Initialize the adapter with the items
-        FoodItemAdapter adapter = new FoodItemAdapter(getActivity().getApplicationContext(), items, getFragmentManager());
+        adapter = new FoodItemAdapter(getActivity().getApplicationContext(), items, requireActivity().getSupportFragmentManager());
     }
 
     @Override
@@ -54,6 +55,22 @@ public class SearchFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.searchRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
+
+        SearchView searchView = view.findViewById(R.id.searchViewBar);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Handle search query submission if needed
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Filter the RecyclerView based on the search query
+                adapter.getFilter().filter(newText);
+                return true;
+            }
+        });
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
             @Override
@@ -75,7 +92,7 @@ public class SearchFragment extends Fragment {
 
                     // Replace the fragment with OrderDetailsFragment
                     FragmentTransaction fr = getFragmentManager().beginTransaction();
-                    fr.replace(R.id.foodDetailsContainer, foodItemDetailsFragment);
+                    fr.replace(R.id.searchFragmentContainer, foodItemDetailsFragment);
                     fr.addToBackStack(null);
                     fr.commit();
                     return true;

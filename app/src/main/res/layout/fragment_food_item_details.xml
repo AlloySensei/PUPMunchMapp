@@ -20,7 +20,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:src="@drawable/wavef2" />
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <ImageView
         android:id="@+id/displayFoodImage"
         android:layout_width="160dp"
         android:layout_height="160dp"

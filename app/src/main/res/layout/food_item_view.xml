@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
-    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginHorizontal="5dp"
     android:layout_marginVertical="5dp"
     app:cardCornerRadius="10dp">
 
@@ -14,7 +15,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <ImageView
             android:id="@+id/foodImageViewS"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -22,8 +23,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="15dp"
-            android:src="@drawable/applogocircle"
-            app:shapeAppearanceOverlay="@style/roundImage"/>
+            android:src="@drawable/applogocircle" />
 
         <TextView
             android:id="@+id/foodNameTextViewS"

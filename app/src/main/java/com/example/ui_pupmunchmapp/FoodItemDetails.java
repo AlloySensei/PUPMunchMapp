@@ -46,11 +46,13 @@ public class FoodItemDetails extends Fragment {
             String stallName = args.getString("StallName", "");
             int foodPrice = args.getInt("FoodPrice", 0);
 
-            // Set values in the UI elements
-            displayFoodImage.setImageResource(foodImage);
-            displayFoodName.setText(foodName);
-            displayStallName.setText(stallName);
-            displayFoodPrice.setText(String.valueOf(foodPrice));
+            if (displayFoodImage != null && displayFoodName != null && displayStallName != null && displayFoodPrice != null) {
+                // Set values in the UI elements
+                displayFoodImage.setImageResource(foodImage);
+                displayFoodName.setText(foodName);
+                displayStallName.setText(stallName);
+                displayFoodPrice.setText(String.valueOf(foodPrice));
+            }
         }
 
         return view;

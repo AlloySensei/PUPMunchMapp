@@ -25,11 +25,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchRecyclerView"
-        android:layout_width="402dp"
-        android:layout_height="560dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
+        android:layout_width="400dp"
+        android:layout_height="600dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:scrollbars="vertical"
         tools:listitem="@layout/food_item_view" />

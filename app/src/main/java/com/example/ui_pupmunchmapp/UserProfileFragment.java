@@ -19,15 +19,7 @@ public class UserProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_user_profile, container, false);
-        Button btneditprofile=(Button) view.findViewById(R.id.btnEditProfile);
-        btneditprofile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction fr=getFragmentManager().beginTransaction();
-                fr.replace(R.id.userProfileContainer, new EditUserProfile());
-                fr.commit();
-            }
-        });
+
         return view;
 
     }

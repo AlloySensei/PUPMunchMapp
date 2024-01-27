@@ -23,23 +23,33 @@
         app:queryHint="@string/txtSearchQuery"
         app:searchIcon="@drawable/searchlogo" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/searchRecyclerView"
-        android:layout_width="402dp"
-        android:layout_height="560dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="10dp"
-        android:scrollbars="vertical"
-        tools:listitem="@layout/food_item_view" />
-
-    <ImageView
-        android:id="@+id/wave"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="-80dp"
-        android:src="@drawable/wavef2" />
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/food_item_view" />
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/wave"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/wavef2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </LinearLayout>

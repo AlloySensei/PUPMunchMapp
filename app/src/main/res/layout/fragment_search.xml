@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/gradientbg"
+    android:id="@+id/searchFragmentContainer"
     tools:context=".SearchFragment">
 
     <androidx.appcompat.widget.SearchView
@@ -13,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/inputroundborder"
         android:hint="@string/txtSearchHint"
@@ -24,21 +26,20 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchRecyclerView"
         android:layout_width="402dp"
-        android:layout_height="631dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="20dp"
+        android:layout_height="560dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="10dp"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        tools:listitem="@layout/food_item_view" />
 
     <ImageView
-        android:id="@+id/waveSearch"
+        android:id="@+id/wave"
         android:layout_width="match_parent"
-        android:layout_height="196dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="535dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="-80dp"
         android:src="@drawable/wavef2" />
 
-</RelativeLayout>
+
+</LinearLayout>

@@ -32,7 +32,6 @@ public class ListAdapter extends ArrayAdapter<ListOrders> {
         TextView customerNameTextView = view.findViewById(R.id.listdCustomerName);
         TextView orderDateTextView = view.findViewById(R.id.listdOrderDate);
         TextView orderTimeTextView = view.findViewById(R.id.listdOrderTime);
-        // ... (find other TextViews)
 
         // Set the text for each TextView
         if (listOrders != null) {

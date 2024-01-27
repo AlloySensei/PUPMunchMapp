@@ -8,18 +8,27 @@
     android:orientation="vertical"
     tools:context=".HomeFragment">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:rotationY="-180"
+        android:src="@drawable/wavef3"
+        android:layout_marginTop="-10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         app:cardBackgroundColor="#00FFFFFF"
+        app:cardCornerRadius="8dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="8dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ScrollView
             android:layout_width="match_parent"

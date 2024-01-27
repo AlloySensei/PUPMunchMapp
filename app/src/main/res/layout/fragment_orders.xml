@@ -8,7 +8,14 @@
     android:id="@+id/ordersContainer"
     tools:context=".OrdersFragment">
 
-<!--    put imageview for wave design-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/wavef3"
+        android:layout_marginTop="-20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/titleOrderDetails"
@@ -32,7 +39,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="80dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="90dp"
         tools:listitem="@layout/list_orders"
         android:divider="@android:color/transparent"
         android:dividerHeight="8.0sp">

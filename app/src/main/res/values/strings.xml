@@ -32,6 +32,7 @@
     <string name="txtCategory">Display user category</string>
     <string name="txtEditProfile">Edit Profile</string>
     <!--For EditProfile fragment-->
+    <string name="editProfile">Edit Profile</string>
     <string name="txtUpdate">Update</string>
     <string name="txtEditPic">Edit picture</string>
     <!--For Orders fragment-->
@@ -59,6 +60,14 @@
     <string name="foodNameSearchView">Item name here</string>
     <string name="stallNameSearchView">Stall name here</string>
     <string name="foodPriceSearchView">Price</string>
+    <!--For FoodItemDetails fragment -->
+    <string name="foodItemDetails">Food Item Details</string>
+    <string name="foodName">Item name:</string>
+    <string name="foodPrice">Item price:</string>
+    <string name="itemDescription">Item description:</string>
+    <string name="txtItemDescription">Description of selected item</string>
+    <string name="btnPlaceOrder">PLACE ORDER</string>
+
     <!--strings below are from themes.xml-->
     <string name="appname">Navigation Drawer</string>
     <string name="open_nav">Open Navigation Drawer</string>
@@ -68,5 +77,6 @@
     <string name="by_category">By Category</string>
     <string name="view_all">View All</string>
     <string name="featured">Featured</string>
+
 
 </resources>

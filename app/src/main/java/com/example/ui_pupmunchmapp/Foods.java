@@ -1,51 +1,35 @@
 package com.example.ui_pupmunchmapp;
 
 public class Foods {
-    private int categoryId;
+    private int CategoryId;
     private String Description;
     private boolean BestFood;
-    private int id;
-    private int locationId;
-    private double price;
-    private String imagePath;
-    private String priceId;
-    private double star;
-    private int timeId;
-    private int timeValue;
-    private String title;
+    private int Id;
+    private int LocationId;
+    private double Price;
+    private String ImagePath;
+    private int PriceId;
+    private double Star;
+    private int TimeId;
+    private int TimeValue;
+    private String Title;
     private int numberInCart;
 
-    public String getPriceId() {
-        return priceId;
-    }
-
-    public void setPriceId(String priceId) {
-        this.priceId = priceId;
-    }
-
-    public double getStar() {
-        return star;
-    }
-
-    public void setStar(double star) {
-        this.star = star;
-    }
-
-    public Foods(){
+    public Foods() {
 
     }
 
     @Override
     public String toString() {
-        return title;
+        return Title;
     }
 
     public int getCategoryId() {
-        return categoryId;
+        return CategoryId;
     }
 
     public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+        CategoryId = categoryId;
     }
 
     public String getDescription() {
@@ -65,59 +49,75 @@ public class Foods {
     }
 
     public int getId() {
-        return id;
+        return Id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        Id = id;
     }
 
     public int getLocationId() {
-        return locationId;
+        return LocationId;
     }
 
     public void setLocationId(int locationId) {
-        this.locationId = locationId;
+        LocationId = locationId;
     }
 
     public double getPrice() {
-        return price;
+        return Price;
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        Price = price;
     }
 
     public String getImagePath() {
-        return imagePath;
+        return ImagePath;
     }
 
     public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+        ImagePath = imagePath;
+    }
+
+    public int getPriceId() {
+        return PriceId;
+    }
+
+    public void setPriceId(int priceId) {
+        PriceId = priceId;
+    }
+
+    public double getStar() {
+        return Star;
+    }
+
+    public void setStar(double star) {
+        Star = star;
     }
 
     public int getTimeId() {
-        return timeId;
+        return TimeId;
     }
 
     public void setTimeId(int timeId) {
-        this.timeId = timeId;
+        TimeId = timeId;
     }
 
     public int getTimeValue() {
-        return timeValue;
+        return TimeValue;
     }
 
     public void setTimeValue(int timeValue) {
-        this.timeValue = timeValue;
+        TimeValue = timeValue;
     }
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Title = title;
     }
 
     public int getNumberInCart() {

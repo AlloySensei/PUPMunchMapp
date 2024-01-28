@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -56,8 +57,8 @@ public class HomeFragment extends Fragment {
     FirebaseAuth mAuth;
     TextView userName,welcome;
     Spinner priceSp,locationSp, timeSp;
-    ProgressBar featuredProgressBar;
-    RecyclerView featuredFoodView;
+    ProgressBar featuredProgressBar, categoryProgressBar;
+    RecyclerView featuredFoodView, categoryView;
     FirebaseUser user;
 
     public HomeFragment() {
@@ -108,6 +109,8 @@ public class HomeFragment extends Fragment {
         locationSp = view.findViewById(R.id.locationSp);
         featuredProgressBar = view.findViewById(R.id.progressFeatured);
         featuredFoodView = view.findViewById(R.id.recyclerView4);
+        categoryView = view.findViewById(R.id.recyclerView5);
+        categoryProgressBar = view.findViewById(R.id.progressCategory);
 
         if(user == null){
             Intent intent = new Intent(getContext(),LoginPage.class);
@@ -120,6 +123,7 @@ public class HomeFragment extends Fragment {
         initTime();
         initPrice();
         initFeatured();
+        initCategory();
         return view;
     }
 
@@ -141,6 +145,35 @@ public class HomeFragment extends Fragment {
                     RecyclerView.Adapter adapter = new FeaturedAdapter(list);
                     featuredFoodView.setAdapter(adapter);
                     featuredProgressBar.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void initCategory(){
+        DatabaseReference myRef = database.getReference("Category");
+        categoryProgressBar.setVisibility(View.VISIBLE);
+        ArrayList<Category> list = new ArrayList<>();
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    for (DataSnapshot issue: snapshot.getChildren()){
+                        list.add(issue.getValue(Category.class));
+                    }
+                }
+                if (list.size() > 0){
+                    categoryView.setLayoutManager(new GridLayoutManager(requireContext(),4));
+                    RecyclerView.Adapter adapter = new CategoryAdapter(list);
+                    categoryView.setAdapter(adapter);
+                    categoryProgressBar.setVisibility(View.GONE);
+
                 }
             }
 

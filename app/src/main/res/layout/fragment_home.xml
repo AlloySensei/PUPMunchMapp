@@ -269,7 +269,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="300dp">
+                        android:minHeight="200dp">
 
                         <ProgressBar
                             android:id="@+id/progressCategory"
@@ -293,6 +293,7 @@
                             app:layout_constraintStart_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginBottom="20dp"
                             app:layout_constraintVertical_bias="0.0" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>

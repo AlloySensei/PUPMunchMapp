@@ -2,6 +2,7 @@ package com.example.ui_pupmunchmapp;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,6 +76,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
             // Handle the case when getImagePath() is null
             holder.pic.setImageResource(R.drawable.f);
         }
+        holder.itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(context, ListFoodsActivity.class);
+                intent.putExtra("CategoryId",items.get(position).getId());
+                intent.putExtra("CategoryName", items.get(position).getName());
+                context.startActivity(intent);
+        });
     }
 
     @Override

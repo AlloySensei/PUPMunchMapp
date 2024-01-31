@@ -41,7 +41,7 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
-    FirebaseDatabase database;
+
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -50,6 +50,7 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     FirebaseAuth mAuth;
+    FirebaseDatabase database;
     TextView userName,welcome;
     Spinner priceSp,locationSp, timeSp;
     ProgressBar featuredProgressBar, categoryProgressBar;
@@ -135,7 +136,6 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
 
@@ -158,7 +158,6 @@ public class HomeFragment extends Fragment {
                     RecyclerView.Adapter adapter = new CategoryAdapter(list);
                     categoryView.setAdapter(adapter);
                     categoryProgressBar.setVisibility(View.GONE);
-
                 }
             }
 

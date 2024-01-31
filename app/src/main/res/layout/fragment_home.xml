@@ -21,7 +21,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="90dp"
+
         app:cardBackgroundColor="#00FFFFFF"
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp"
@@ -70,9 +70,9 @@
                     <TextView
                         android:id="@+id/userName"
                         android:layout_width="wrap_content"
-                        android:layout_height="34dp"
+                        android:layout_height="wrap_content"
                         android:text="@string/txtHome"
-                        android:textSize="25sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -203,7 +203,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="300dp">
+                        android:layout_height="wrap_content"
+                        android:minHeight="300dp">
 
                         <ProgressBar
                             android:id="@+id/progressFeatured"
@@ -219,7 +220,7 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerView4"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -237,7 +238,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="90dp"
                     android:background="@drawable/grey_background"
                     android:orientation="vertical">
 
@@ -267,7 +268,8 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="300dp">
+                        android:layout_height="wrap_content"
+                        android:minHeight="200dp">
 
                         <ProgressBar
                             android:id="@+id/progressCategory"
@@ -291,6 +293,7 @@
                             app:layout_constraintStart_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
+                            android:layout_marginBottom="20dp"
                             app:layout_constraintVertical_bias="0.0" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>

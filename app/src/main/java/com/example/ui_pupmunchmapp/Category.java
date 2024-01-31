@@ -1,31 +1,35 @@
 package com.example.ui_pupmunchmapp;
 
 public class Category {
-    private int id;
-    private String imagePath;
-    private String name;
+    private int Id;
+    private String ImagePath;
+    String Name;
+
+    public Category() {
+
+    }
 
     public int getId() {
-        return id;
+        return Id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        Id = id;
     }
 
     public String getImagePath() {
-        return imagePath;
+        return ImagePath;
     }
 
     public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
+        ImagePath = imagePath;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Name = name;
     }
 }

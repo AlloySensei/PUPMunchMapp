@@ -12,6 +12,7 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="category">Category</string>
+    <string name="contactNo">Contact number</string>
     <!--For MainNavigationC fragments-->
     <string name="txtHome">Juan Dela Cruz</string>
     <string name="txtHome1">Home</string>
@@ -25,13 +26,15 @@
     <string name="txtSearchQuery">Type any food you want...</string>
     <string name="txtSearchHint">Search here</string>
     <!--For UserProfile fragment-->
-    <string name="myProfile">My Profile</string>
-    <string name="txtEmail">Display email</string>
-    <string name="txtUsername">Display username</string>
-    <string name="txtPassword">Display password</string>
-    <string name="txtCategory">Display user category</string>
+    <string name="myProfile">User account details</string>
+    <string name="txtEmail">juandc@gmail.com</string>
+    <string name="txtUsername">Juan Dela Cruz</string>
+    <string name="txtPassword">juandc01</string>
+    <string name="txtCategory">Customer</string>
+    <string name="txtContactNo">09876543210</string>
     <string name="txtEditProfile">Edit Profile</string>
     <!--For EditProfile fragment-->
+    <string name="accountDetails">Account details</string>
     <string name="editProfile">Edit Profile</string>
     <string name="txtUpdate">Update</string>
     <string name="txtEditPic">Edit picture</string>

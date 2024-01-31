@@ -36,10 +36,6 @@ import java.util.ArrayList;
 
 
 public class HomeFragment extends Fragment {
-    private ActivityMainBinding binding;
-
-    FirebaseDatabase database;
-
 
     FirebaseAuth mAuth;
     FirebaseDatabase database;

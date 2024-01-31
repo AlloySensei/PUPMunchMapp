@@ -15,150 +15,220 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
-    <TextView
-        android:id="@+id/titleEditProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/alfa_slab_one"
-        android:text="@string/editProfile"
-        android:textColor="@color/white"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/profilePic"
-        android:layout_width="175dp"
-        android:layout_height="145dp"
-        android:layout_gravity="center"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/editProfileCardview"
+        android:layout_width="0dp"
+        android:layout_height="600dp"
+        app:cardCornerRadius="20dp"
+        android:elevation="0dp"
         android:layout_marginTop="30dp"
-        android:src="@drawable/useraccountlogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginBottom="90dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleEditProfile"
-        app:tint="@color/thirdColor" />
-
-    <Button
-        android:id="@+id/btnEditProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/buttonroundborder"
-        android:text="@string/txtUpdate"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edCategory"
-        app:layout_constraintVertical_bias="0.005" />
-
-
-    <EditText
-        android:id="@+id/edEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="60dp"
-        android:background="@drawable/inputroundborder"
-        android:drawableStart="@drawable/baseline_email_24"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:fontFamily="sans-serif-medium"
-        android:hint="@string/email"
-        android:inputType="text"
-        android:padding="6dp"
-        android:textColorHint="@color/fourthColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePic" />
-
-    <EditText
-        android:id="@+id/edUsername"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="60dp"
-        android:background="@drawable/inputroundborder"
-        android:drawableStart="@drawable/useraccountlogo"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:fontFamily="sans-serif-medium"
-        android:hint="@string/username"
-        android:inputType="text"
-        android:padding="6dp"
-        android:textColorHint="@color/fourthColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edEmail"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/edPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="60dp"
-        android:background="@drawable/inputroundborder"
-        android:drawableStart="@drawable/userpasswordcircle"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:fontFamily="sans-serif-medium"
-        android:hint="@string/username"
-        android:inputType="text"
-        android:padding="6dp"
-        android:textColorHint="@color/fourthColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edUsername"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/edCategory"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="60dp"
-        android:background="@drawable/inputroundborder"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="18dp"
-        android:textAlignment="center"
-        android:hint="@string/txtCategory"
-        android:padding="6dp"
-        android:textColorHint="@color/fourthColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edPassword"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/fourthColor"
-        android:contentDescription="@string/txtEditPic"
-        android:src="@drawable/editbtnlogo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28"
-        app:maxImageSize="40dp" />
+        app:layout_constraintBottom_toBottomOf="parent">
 
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/userProfileHeader"
+                        android:layout_width="600dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/userprofilebg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/titleAccountDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/alfa_slab_one"
+                        android:text="@string/accountDetails"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/userPicContainer" />
+
+                    <ImageView
+                        android:id="@+id/userPicContainer"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/display_userbg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/profilePic"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/userprofilepic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/thirdColor" />
+
+                    <Button
+                        android:id="@+id/btnUpdateProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="50dp"
+                        android:background="@drawable/buttonroundborder"
+                        android:text="@string/txtUpdate"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edContactNo"
+                        app:layout_constraintVertical_bias="0.005" />
+
+                    <EditText
+                        android:id="@+id/edEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="60dp"
+                        android:drawableStart="@drawable/baseline_email_24"
+                        android:drawablePadding="10dp"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-medium"
+                        android:hint="@string/email"
+                        android:inputType="text"
+                        android:padding="6dp"
+                        android:textColorHint="@color/fourthColor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/titleAccountDetails" />
+
+                    <EditText
+                        android:id="@+id/edUsername"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="60dp"
+                        android:drawableStart="@drawable/useraccountlogo"
+                        android:drawablePadding="10dp"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-medium"
+                        android:hint="@string/username"
+                        android:inputType="text"
+                        android:padding="6dp"
+                        android:textColorHint="@color/fourthColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edEmail"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <EditText
+                        android:id="@+id/edPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="60dp"
+                        android:drawableStart="@drawable/userpasswordcircle"
+                        android:drawablePadding="10dp"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-medium"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:padding="6dp"
+                        android:textColorHint="@color/fourthColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edUsername"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <EditText
+                        android:id="@+id/displayCategory"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="60dp"
+                        android:drawableStart="@drawable/useraccountlogo"
+                        android:drawablePadding="10dp"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-medium"
+                        android:hint="@string/category"
+                        android:padding="6dp"
+                        android:textColorHint="@color/fourthColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edPassword"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <EditText
+                        android:id="@+id/edContactNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="60dp"
+                        android:drawableStart="@drawable/useraccountlogo"
+                        android:drawablePadding="10dp"
+                        android:ems="10"
+                        android:fontFamily="sans-serif-medium"
+                        android:hint="@string/contactNo"
+                        android:padding="6dp"
+                        android:paddingVertical="20dp"
+                        android:textColorHint="@color/fourthColor"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/displayCategory" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/startColor"
+                        android:contentDescription="@string/txtEditPic"
+                        android:src="@drawable/editbtnlogo"
+                        app:layout_constraintBottom_toTopOf="@id/titleAccountDetails"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.65"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/userProfileHeader"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:maxImageSize="40dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

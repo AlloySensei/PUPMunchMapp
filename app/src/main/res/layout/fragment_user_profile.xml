@@ -8,196 +8,293 @@
     android:background="@drawable/gradientbg"
     tools:context=".UserProfileFragment">
 
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginBottom="-5dp"
-        android:src="@drawable/wavef4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="344dp">
 
-    <TextView
-        android:id="@+id/titleUserProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/alfa_slab_one"
-        android:text="@string/myProfile"
-        android:textColor="@color/white"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/profilePic"
-        android:layout_width="163dp"
-        android:layout_height="159dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/useraccountlogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleUserProfile"
-        app:tint="@color/thirdColor" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="-100dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/wavef4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/accountDetailsCardView"
+                app:layout_constraintVertical_bias="0" />
 
-    <Button
-        android:id="@+id/btnEditProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/buttonroundborder"
-        android:text="@string/txtEditProfile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleUserCategory"
-        app:layout_constraintVertical_bias="0.005" />
+            <ImageView
+                android:id="@+id/userProfileHeader"
+                android:layout_width="600dp"
+                android:layout_height="150dp"
+                android:src="@drawable/userprofilebg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/titleEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="30dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/email"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePic" />
+            <ImageView
+                android:id="@+id/userPicContainer"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/display_userbg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/titleUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/username"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleEmail" />
+            <ImageView
+                android:id="@+id/profilePic"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/userprofilepic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/thirdColor" />
 
-    <TextView
-        android:id="@+id/titlePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/password"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleUsername"
-        app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/displayUsername"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="0dp"
+                android:fontFamily="sans-serif-medium"
+                android:padding="0dp"
+                android:paddingVertical="20dp"
+                android:text="@string/txtUsername"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/userPicContainer"
+                app:layout_constraintTop_toBottomOf="@+id/userProfileHeader" />
 
-    <TextView
-        android:id="@+id/titleUserCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/category"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titlePassword"
-        app:layout_constraintVertical_bias="0.0" />
+            <Button
+                android:id="@+id/btnEditProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/displaytxtbg"
+                android:text="@string/txtEditProfile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.757"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/displayUsername"
+                app:layout_constraintVertical_bias="0" />
 
-    <TextView
-        android:id="@+id/displayCategory"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/inputroundborder"
-        android:drawablePadding="10dp"
-        android:fontFamily="sans-serif-medium"
-        android:padding="12dp"
-        android:paddingVertical="20dp"
-        android:text="@string/txtCategory"
-        android:textColor="@color/fourthColor"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/titleUserCategory"
-        app:layout_constraintTop_toBottomOf="@+id/displayPassword" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/accountDetailsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnEditProfile"
+                app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/displayEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/inputroundborder"
-        android:drawablePadding="10dp"
-        android:fontFamily="sans-serif-medium"
-        android:padding="12dp"
-        android:paddingVertical="20dp"
-        android:text="@string/txtEmail"
-        android:textColor="@color/fourthColor"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/titleEmail"
-        app:layout_constraintTop_toBottomOf="@+id/profilePic" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/displayUsername"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/inputroundborder"
-        android:drawablePadding="10dp"
-        android:fontFamily="sans-serif-medium"
-        android:padding="12dp"
-        android:text="@string/txtUsername"
-        android:textColor="@color/fourthColor"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/titleUsername"
-        app:layout_constraintTop_toBottomOf="@+id/displayEmail" />
+                    <TextView
+                        android:id="@+id/titleUserProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/alfa_slab_one"
+                        android:text="@string/myProfile"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/displayPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/inputroundborder"
-        android:fontFamily="sans-serif-medium"
-        android:padding="12dp"
-        android:text="@string/txtPassword"
-        android:textColor="@color/fourthColor"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/titlePassword"
-        app:layout_constraintTop_toBottomOf="@+id/displayUsername"
-        app:layout_constraintVertical_bias="0.0" />
+                    <TextView
+                        android:id="@+id/titleEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/email"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/titleUserProfile" />
 
+                    <TextView
+                        android:id="@+id/titlePassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/password"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/displayEmail"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/titleUserCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/category"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.141"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/displayPassword"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/titleContactNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/contactNo"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.141"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/displayCategory"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/displayEmail"/>
+
+                    <TextView
+                        android:id="@+id/displayEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="40dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="12dp"
+                        android:paddingVertical="20dp"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/titleEmail" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/displayPassword"/>
+
+                    <TextView
+                        android:id="@+id/displayPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="40dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="12dp"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/titlePassword" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/displayCategory"/>
+
+                    <TextView
+                        android:id="@+id/displayCategory"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="40dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="12dp"
+                        android:paddingVertical="20dp"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/titleUserCategory" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/displayContactNo"/>
+
+                    <TextView
+                        android:id="@+id/displayContactNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="20dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="12dp"
+                        android:paddingVertical="20dp"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/titleContactNo" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,7 @@
             android:exported="false" />
         <activity
             android:name=".LaunchPage"
-            android:exported="false"></activity>
+            android:exported="false"/>
         <activity
             android:name=".LoginPage"
             android:exported="true">

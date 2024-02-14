@@ -90,6 +90,7 @@
     <string name="email2">Email:</string>
     <string name="socials">Social media page:</string>
     <string name="owner">Store owner:</string>
+    <string name="btnConfirmOrder">CONFIRM ORDER</string>
 
     <!--strings below are from themes.xml-->
     <string name="appname">Navigation Drawer</string>

@@ -1,5 +1,6 @@
 package com.example.ui_pupmunchmapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemViewHolder> {
 
     Context context;
     List<FoodItem> items;
+    public FoodItemAdapter(List<FoodItem> items) { this.items = items; }
     private FragmentManager fragmentManager;
     private List<FoodItem> originalItems;
     private List<FoodItem> filteredItems;
@@ -27,8 +29,13 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemViewHolder> {
         this.context = context;
         this.items = items;
         this.originalItems = new ArrayList<>(items);
-        this.filteredItems = new ArrayList<>(items);
         this.fragmentManager = fragmentManager;
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void setFilteredItems(List<FoodItem> filteredItems){
+        this.filteredItems = filteredItems;
+        notifyDataSetChanged();
     }
 
     public FoodItem getItem(int position) {
@@ -63,36 +70,36 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemViewHolder> {
     }
 
 //    @Override
-    public Filter getFilter(){
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence constraint) {
-                List<FoodItem> filteredResults = new ArrayList<>();
-                if (constraint == null || constraint.length() == 0) {
-                    filteredResults.addAll(originalItems);
-                } else {
-                    String filterPattern = constraint.toString().toLowerCase().trim();
-                    for (FoodItem item : originalItems) {
-                        if (item.getItemName().toLowerCase().contains(filterPattern)
-                                || item.getStallName().toLowerCase().contains(filterPattern)) {
-                            filteredResults.add(item);
-                        }
-                    }
-                }
-
-                FilterResults results = new FilterResults();
-                results.values = filteredResults;
-                return results;
-            }
-
-            @Override
-            protected void publishResults(CharSequence constraint, FilterResults results) {
-                filteredItems.clear();
-                filteredItems.addAll((List<FoodItem>) results.values);
-                notifyDataSetChanged();
-            }
-        };
-    }
+//    public Filter getFilter(){
+//        return new Filter() {
+//            @Override
+//            protected FilterResults performFiltering(CharSequence constraint) {
+//                List<FoodItem> filteredResults = new ArrayList<>();
+//                if (constraint == null || constraint.length() == 0) {
+//                    filteredResults.addAll(originalItems);
+//                } else {
+//                    String filterPattern = constraint.toString().toLowerCase().trim();
+//                    for (FoodItem item : originalItems) {
+//                        if (item.getItemName().toLowerCase().contains(filterPattern)
+//                                || item.getStallName().toLowerCase().contains(filterPattern)) {
+//                            filteredResults.add(item);
+//                        }
+//                    }
+//                }
+//
+//                FilterResults results = new FilterResults();
+//                results.values = filteredResults;
+//                return results;
+//            }
+//
+//            @Override
+//            protected void publishResults(CharSequence constraint, FilterResults results) {
+//                filteredItems.clear();
+//                filteredItems.addAll((List<FoodItem>) results.values);
+//                notifyDataSetChanged();
+//            }
+//        };
+//    }
 
     private void openFoodItemDetails(FoodItem selectedFoodItem) {
         FoodItemDetails foodItemDetailsFragment = new FoodItemDetails();

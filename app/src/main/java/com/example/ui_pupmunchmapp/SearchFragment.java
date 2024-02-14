@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,9 @@ import java.util.List;
 public class SearchFragment extends Fragment {
 
     public FoodItemAdapter adapter;
+    public RecyclerView recyclerView;
+    public SearchView searchView;
+    public List<FoodItem> itemList;
     Context context;
 
 
@@ -52,11 +56,11 @@ public class SearchFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_search, container, false);
         // Find the RecyclerView and set the adapter
-        RecyclerView recyclerView = view.findViewById(R.id.searchRecyclerView);
+        recyclerView = view.findViewById(R.id.searchRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
 
-        SearchView searchView = view.findViewById(R.id.searchViewBar);
+        searchView = view.findViewById(R.id.searchView);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -67,10 +71,13 @@ public class SearchFragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String newText) {
                 // Filter the RecyclerView based on the search query
-                adapter.getFilter().filter(newText);
+                filterList(newText);
                 return true;
             }
         });
+
+        recyclerView = recyclerView.findViewById(R.id.searchRecyclerView);
+        itemList = new ArrayList<>();
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
             @Override
@@ -111,5 +118,21 @@ public class SearchFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    private void filterList(String text) {
+        List<FoodItem> filteredList = new ArrayList<>();
+        for (FoodItem item : itemList){
+            if (item.getItemName().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
+        }
+
+        if (filteredList.isEmpty()){
+            Toast.makeText(context, "No data found", Toast.LENGTH_SHORT).show();
+        }else{
+            adapter.
+                    setFilteredItems(filteredList);
+        }
     }
 }

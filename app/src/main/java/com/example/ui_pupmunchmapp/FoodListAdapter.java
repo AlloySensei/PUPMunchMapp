@@ -19,6 +19,8 @@ import java.util.ArrayList;
 public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.viewholder> {
     ArrayList<Foods> items;
     Context context;
+    ArrayList<Foods> originalItems;
+
 
     public FoodListAdapter(ArrayList<Foods> items) {
         this.items = items;
@@ -64,5 +66,20 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.viewho
             pic = itemView.findViewById(R.id.img);
 
         }
+    }
+
+    public void filter(String query) {
+        items.clear(); // Clear current list
+        if (query.isEmpty()) {
+            items.addAll(originalItems);
+        } else {
+            query = query.toLowerCase();
+            for (Foods food : originalItems) {
+                if (food.getTitle().toLowerCase().contains(query)) {
+                    items.add(food);
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 }

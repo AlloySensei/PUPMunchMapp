@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -44,6 +45,7 @@ public class HomeFragment extends Fragment {
     ProgressBar featuredProgressBar, categoryProgressBar;
     RecyclerView featuredFoodView, categoryView;
     FirebaseUser user;
+    ImageView logoutBtn;
 
     public HomeFragment() {
     }
@@ -66,6 +68,7 @@ public class HomeFragment extends Fragment {
         featuredFoodView = view.findViewById(R.id.recyclerView4);
         categoryView = view.findViewById(R.id.recyclerView5);
         categoryProgressBar = view.findViewById(R.id.progressCategory);
+        logoutBtn = view.findViewById(R.id.logoutBtn);
 
         if(user == null){
             Intent intent = new Intent(getContext(),LoginPage.class);
@@ -79,7 +82,16 @@ public class HomeFragment extends Fragment {
         initPrice();
         initFeatured();
         initCategory();
+        setVariable();
         return view;
+    }
+
+    private void setVariable() {
+        logoutBtn.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getContext(), LoginPage.class));
+        });
+
     }
 
     private void initFeatured(){

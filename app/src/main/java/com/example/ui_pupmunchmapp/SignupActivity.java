@@ -35,7 +35,7 @@ public class SignupActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.inputPassword);
         mAuth = FirebaseAuth.getInstance();
         editTextPasswordConfirm = findViewById(R.id.inputConfirmPassword);
-        buttonReg = findViewById(R.id.button2);
+        buttonReg = findViewById(R.id.buttonReg);
 
         editTextPasswordConfirm.addTextChangedListener(new TextWatcher() {
             @Override
@@ -63,42 +63,40 @@ public class SignupActivity extends AppCompatActivity {
                 password = String.valueOf(editTextPassword.getText());
                 passwordConfirm = String.valueOf(editTextPasswordConfirm.getText());
 
-
-
-                if(name.isEmpty()){
+                if (name.isEmpty()) {
                     editTextName.setError("This field cannot be empty");
-                }else if(email.isEmpty()){
+                } else if (email.isEmpty()) {
                     editTextEmail.setError("This field cannot be empty");
-                }
-                if (password.equals(passwordConfirm)) {
-                    editTextPasswordConfirm.setError(null);
-                } else {
+                } else if (password.isEmpty()) {
+                    editTextPassword.setError("This field cannot be empty");
+                } else if (passwordConfirm.isEmpty()) {
+                    editTextPasswordConfirm.setError("This field cannot be empty");
+                } else if (!password.equals(passwordConfirm)) {
                     editTextPasswordConfirm.setError("Passwords do not match");
                     editTextPasswordConfirm.setTextColor(getResources().getColor(android.R.color.holo_red_light));
-                }
-
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    // You can navigate to another activity or perform other actions here
-                                    Toast.makeText(SignupActivity.this, "Account Created",
-                                            Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(),LoginPage.class);
-                                    startActivity(intent);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.e("AuthenticationFailed", "signInWithEmail:failure", task.getException());
-                                    Toast.makeText(SignupActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                } else {
+                    // All fields are filled, proceed with user creation
+                    mAuth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        // You can navigate to another activity or perform other actions here
+                                        Toast.makeText(SignupActivity.this, "Account Created",
+                                                Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(), LoginPage.class);
+                                        startActivity(intent);
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Log.e("AuthenticationFailed", "signInWithEmail:failure", task.getException());
+                                        Toast.makeText(SignupActivity.this, "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        });
-
-
+                            });
+                }
             }
         });
 

@@ -123,14 +123,14 @@
         app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonReg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/btn_bg"
         android:backgroundTint="#0E0303"
         android:text="REGISTER"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textColorLink="#300808"
         app:layout_constraintEnd_toEndOf="@+id/inputConfirmPassword"
         app:layout_constraintStart_toStartOf="@+id/inputConfirmPassword"
@@ -144,8 +144,8 @@
         android:shadowColor="@color/white"
         android:text="Already have an Account?"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintEnd_toEndOf="@+id/buttonReg"
+        app:layout_constraintStart_toStartOf="@+id/buttonReg"
+        app:layout_constraintTop_toBottomOf="@+id/buttonReg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

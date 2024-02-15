@@ -16,6 +16,15 @@
         android:theme="@style/Theme.UI_PUPMunchMapp"
         tools:targetApi="31">
         <activity
+            android:name=".LoginS"
+            android:exported="false" />
+        <activity
+            android:name=".SignupS"
+            android:exported="false" />
+        <activity
+            android:name=".PreLogin"
+            android:exported="false" />
+        <activity
             android:name=".ListFoodsActivity"
             android:exported="false" />
         <activity
@@ -23,9 +32,6 @@
             android:exported="false" />
         <activity
             android:name=".LaunchPage"
-            android:exported="false"/>
-        <activity
-            android:name=".LoginPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +39,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LoginPage"
+            android:exported="true" />
         <activity
             android:name=".MainNavigationC"
             android:exported="true">

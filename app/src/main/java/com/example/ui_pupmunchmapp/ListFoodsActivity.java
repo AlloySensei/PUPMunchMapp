@@ -52,6 +52,11 @@ public class ListFoodsActivity extends AppCompatActivity {
 
         getIntentExtra();
         initList();
+        setVariable();
+    }
+
+    private void setVariable() {
+
     }
 
     private void initList() {
@@ -90,7 +95,7 @@ public class ListFoodsActivity extends AppCompatActivity {
 
     private void getIntentExtra() {
         categoryId = getIntent().getIntExtra("CategoryId", 0);
-        categoryName = getIntent().getStringExtra("Category");
+        categoryName = getIntent().getStringExtra("CategoryName");
         searchText = getIntent().getStringExtra("text");
         isSearch = getIntent().getBooleanExtra("isSearch", false);
 

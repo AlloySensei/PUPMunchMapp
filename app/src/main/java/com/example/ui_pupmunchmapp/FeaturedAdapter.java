@@ -2,8 +2,7 @@ package com.example.ui_pupmunchmapp;
 
 
 import android.content.Context;
-import android.media.Image;
-import android.text.Layout;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +47,12 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.viewho
                 .transform(new CenterCrop(), new RoundedCorners(30))
                 .error(R.drawable.applogocircle)
                 .into(holder.pic);
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, DetailActivity.class);
+            intent.putExtra("object", items.get(position));
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -65,7 +70,7 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.viewho
             priceTxt = itemView.findViewById(R.id.priceTxt);
             starTxt = itemView.findViewById(R.id.starTxt);
             timeTxt = itemView.findViewById(R.id.timeTxt);
-            pic = itemView.findViewById(R.id.pic);
+            pic = itemView.findViewById(R.id.numText);
         }
     }
 }

@@ -21,7 +21,7 @@
             android:layout_height="72dp"
             android:padding="12dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/rice"
+            app:srcCompat="@drawable/f"
             android:background="@drawable/cat_1_background"/>
 
         <TextView

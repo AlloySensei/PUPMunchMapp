@@ -60,22 +60,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
             } case 6:{
                 holder.pic.setBackgroundResource(R.drawable.cat_7_background);
                 break;
-            } case 7:{
-                holder.pic.setBackgroundResource(R.drawable.cat_8_background);
-                break;
             }
         }
-        if (items.get(position).getImagePath() != null) {
-            int drawableResourceId = context.getResources().getIdentifier(items.get(position).getImagePath(),
-                    "drawable", holder.itemView.getContext().getPackageName());
-            Glide.with(context)
-                    .load(drawableResourceId)
-                    .error(R.drawable.applogocircle)
-                    .into(holder.pic);
-        } else {
-            // Handle the case when getImagePath() is null
-            holder.pic.setImageResource(R.drawable.f);
-        }
+        int drawableResourceId = context.getResources().getIdentifier(items.get(position).getImagePath(),
+                "drawable", holder.itemView.getContext().getPackageName());
+        Glide.with(context)
+                .load(drawableResourceId)
+                .error(R.drawable.applogocircle)
+                .into(holder.pic);
+
         holder.itemView.setOnClickListener(v -> {
                 Intent intent = new Intent(context, ListFoodsActivity.class);
                 intent.putExtra("CategoryId",items.get(position).getId());

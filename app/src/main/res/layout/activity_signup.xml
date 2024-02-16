@@ -152,8 +152,8 @@
         android:shadowColor="@color/white"
         android:text="Already have an Account?"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintEnd_toEndOf="@+id/buttonReg"
+        app:layout_constraintStart_toStartOf="@+id/buttonReg"
+        app:layout_constraintTop_toBottomOf="@+id/buttonReg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

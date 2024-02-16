@@ -1,5 +1,7 @@
 package com.example.ui_pupmunchmapp;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,11 +16,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignupActivity extends AppCompatActivity {
     Button buttonReg;
@@ -27,9 +35,9 @@ public class SignupActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
         editTextName = findViewById(R.id.inputUsername);
         editTextEmail = findViewById(R.id.inputEmail);
         editTextPassword = findViewById(R.id.inputPassword);
@@ -39,67 +47,67 @@ public class SignupActivity extends AppCompatActivity {
 
         editTextPasswordConfirm.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
 
             @Override
             public void afterTextChanged(Editable s) {
                 editTextPasswordConfirm.setTextColor(getResources().getColor(android.R.color.black));
             }
         });
+
         buttonReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name, email, password, passwordConfirm;
+                final String email = editTextEmail.getText().toString();
+                final String password = editTextPassword.getText().toString();
+                final String username = editTextName.getText().toString();
 
-                name = String.valueOf(editTextName.getText());
-                email = String.valueOf(editTextEmail.getText());
-                password = String.valueOf(editTextPassword.getText());
-                passwordConfirm = String.valueOf(editTextPasswordConfirm.getText());
+                mAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    if (user != null) {
+                                        String uid = user.getUid();
 
-                if (name.isEmpty()) {
-                    editTextName.setError("This field cannot be empty");
-                } else if (email.isEmpty()) {
-                    editTextEmail.setError("This field cannot be empty");
-                } else if (password.isEmpty()) {
-                    editTextPassword.setError("This field cannot be empty");
-                } else if (passwordConfirm.isEmpty()) {
-                    editTextPasswordConfirm.setError("This field cannot be empty");
-                } else if (!password.equals(passwordConfirm)) {
-                    editTextPasswordConfirm.setError("Passwords do not match");
-                    editTextPasswordConfirm.setTextColor(getResources().getColor(android.R.color.holo_red_light));
-                } else {
-                    // All fields are filled, proceed with user creation
-                    mAuth.createUserWithEmailAndPassword(email, password)
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        // Sign in success, update UI with the signed-in user's information
-                                        FirebaseUser user = mAuth.getCurrentUser();
-                                        // You can navigate to another activity or perform other actions here
-                                        Toast.makeText(SignupActivity.this, "Account Created",
-                                                Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), LoginPage.class);
-                                        startActivity(intent);
-                                    } else {
-                                        // If sign in fails, display a message to the user.
-                                        Log.e("AuthenticationFailed", "signInWithEmail:failure", task.getException());
-                                        Toast.makeText(SignupActivity.this, "Authentication failed.",
-                                                Toast.LENGTH_SHORT).show();
+                                        Map<String, Object> userData = new HashMap<>();
+                                        userData.put("email", email);
+                                        userData.put("username", username); // Set username
+                                        userData.put("role", "customer"); // Set role
+
+                                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                        db.collection("users").document(uid)
+                                                .set(userData)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                                                        Intent intent = new Intent(SignupActivity.this, MainNavigationC.class);
+                                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                        startActivity(intent);
+                                                        finish();
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Log.w(TAG, "Error writing document", e);
+                                                        // Handle failure
+                                                    }
+                                                });
                                     }
+                                } else {
+                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                    Toast.makeText(SignupActivity.this, "Sign up failed.",
+                                            Toast.LENGTH_SHORT).show();
                                 }
-                            });
-                }
+                            }
+                        });
             }
         });
-
-
     }
 }

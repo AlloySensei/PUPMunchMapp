@@ -21,8 +21,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="344dp">
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="-25dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -42,69 +42,59 @@
                 android:id="@+id/userPicContainer"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginStart="16dp"
                 android:src="@drawable/display_userbg"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                tools:layout_editor_absoluteY="50dp" />
 
             <ImageView
                 android:id="@+id/profilePic"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
                 android:src="@drawable/userprofilepic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/thirdColor" />
+                app:layout_constraintStart_toStartOf="@+id/userPicContainer"
+                app:tint="@color/thirdColor"
+                tools:layout_editor_absoluteY="50dp" />
 
             <TextView
                 android:id="@+id/displayUsername"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="0dp"
-                android:fontFamily="sans-serif-medium"
-                android:padding="0dp"
-                android:paddingVertical="20dp"
-                android:text="@string/txtUsername"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/userPicContainer"
-                app:layout_constraintTop_toBottomOf="@+id/userProfileHeader" />
-
-            <Button
-                android:id="@+id/btnEditProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/displaytxtbg"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:padding="0dp"
+                android:paddingVertical="30dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/userPicContainer"
+                app:layout_constraintStart_toStartOf="@+id/userPicContainer"
+                app:layout_constraintTop_toBottomOf="@+id/userPicContainer" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEditProfile"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="42dp"
+                android:background="@drawable/green_button_background"
                 android:text="@string/txtEditProfile"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.757"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/displayUsername"
-                app:layout_constraintVertical_bias="0" />
+                app:layout_constraintTop_toBottomOf="@+id/userProfileHeader" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/accountDetailsCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="64dp"
                 android:layout_marginEnd="30dp"
-                android:layout_marginBottom="90dp"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btnEditProfile"
-                app:layout_constraintVertical_bias="0.0">
+                app:layout_constraintTop_toBottomOf="@+id/btnEditProfile">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -140,12 +130,12 @@
                         app:layout_constraintTop_toBottomOf="@+id/titleUserProfile" />
 
                     <TextView
-                        android:id="@+id/titlePassword"
+                        android:id="@+id/titleContact"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="40dp"
                         android:layout_marginTop="20dp"
-                        android:text="@string/password"
+                        android:text="Contact Number"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold|italic"
@@ -156,47 +146,15 @@
                         app:layout_constraintTop_toBottomOf="@+id/displayEmail"
                         app:layout_constraintVertical_bias="0.0" />
 
-                    <TextView
-                        android:id="@+id/titleUserCategory"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/category"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold|italic"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.141"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/displayPassword"
-                        app:layout_constraintVertical_bias="0.0" />
-
-                    <TextView
-                        android:id="@+id/titleContactNo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/contactNo"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold|italic"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.141"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/displayCategory"
-                        app:layout_constraintVertical_bias="0.0" />
-
                     <View
                         android:layout_width="0dp"
                         android:layout_height="1dp"
                         android:layout_marginStart="40dp"
                         android:layout_marginEnd="40dp"
                         android:background="@android:color/black"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/displayEmail"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/displayEmail"/>
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <TextView
                         android:id="@+id/displayEmail"
@@ -220,78 +178,26 @@
                         android:layout_marginStart="40dp"
                         android:layout_marginEnd="40dp"
                         android:background="@android:color/black"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/displayContact"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/displayPassword"/>
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <TextView
-                        android:id="@+id/displayPassword"
+                        android:id="@+id/displayContact"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="40dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="24dp"
                         android:fontFamily="sans-serif-medium"
                         android:padding="12dp"
-                        android:textSize="16sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/titlePassword" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:background="@android:color/black"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/displayCategory"/>
-
-                    <TextView
-                        android:id="@+id/displayCategory"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="40dp"
-                        android:drawablePadding="10dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:padding="12dp"
-                        android:paddingVertical="20dp"
-                        android:textSize="16sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/titleUserCategory" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:background="@android:color/black"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/displayContactNo"/>
-
-                    <TextView
-                        android:id="@+id/displayContactNo"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="40dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginBottom="20dp"
-                        android:drawablePadding="10dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:padding="12dp"
-                        android:paddingVertical="20dp"
                         android:textSize="16sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/titleContactNo" />
+                        app:layout_constraintTop_toBottomOf="@id/titleContact" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>

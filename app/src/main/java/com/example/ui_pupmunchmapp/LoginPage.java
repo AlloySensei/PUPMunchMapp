@@ -19,6 +19,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class LoginPage extends AppCompatActivity {
@@ -32,10 +35,9 @@ public class LoginPage extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(),MainNavigationC.class);
-            startActivity(intent);
-            finish();
+        if (currentUser != null) {
+            // User is already logged in, check their role and redirect accordingly
+            checkUserRole(currentUser.getUid());
         }
     }
 
@@ -72,12 +74,11 @@ public class LoginPage extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
+                                    // Check user role after successful login
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    Intent intent = new Intent(getApplicationContext(),MainNavigationC.class);
-                                    startActivity(intent);
-                                    finish();
+                                    checkUserRole(user.getUid());
                                 } else {
-                                    // If sign in fails, display a message to the user.
+                                    // Handle authentication failure
                                     Toast.makeText(LoginPage.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
@@ -90,7 +91,7 @@ public class LoginPage extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginPage.this, SignupActivity.class));
+                startActivity(new Intent(LoginPage.this, PreLogin.class));
             }
         });
 
@@ -104,5 +105,39 @@ public class LoginPage extends AppCompatActivity {
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
+    }
+
+    private void checkUserRole(String userId) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference userRef = db.collection("users").document(userId);
+
+        userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        String role = document.getString("role");
+                        if ("customer".equals(role)) {
+                            // Redirect customer to customer dashboard
+                            startActivity(new Intent(LoginPage.this, MainNavigationC.class));
+                        } else if ("seller".equals(role)) {
+                            // Redirect seller to seller dashboard
+                            startActivity(new Intent(LoginPage.this, MainActivity.class));
+                        } else {
+                            // Unknown role or role not found
+                            Toast.makeText(LoginPage.this, "Unknown user role", Toast.LENGTH_SHORT).show();
+                        }
+                        finish(); // Finish the LoginActivity to prevent going back to it
+                    } else {
+                        // Document doesn't exist
+                        Toast.makeText(LoginPage.this, "User document not found", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Error getting document
+                    Toast.makeText(LoginPage.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

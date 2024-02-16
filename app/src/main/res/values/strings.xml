@@ -107,6 +107,8 @@
     <string name="view_all">View All</string>
     <string name="featured">Featured</string>
     <string name="UN_ProfileFragment">Song Kang</string>
+    <string name="apply_coupon">Apply Coupon</string>
+    <string name="enter_your_code">Enter Your Code</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

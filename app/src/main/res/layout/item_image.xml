@@ -24,15 +24,17 @@
                 android:layout_marginTop="23dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <TextView
-                    android:layout_marginTop="15dp"
-                    android:text="@string/UN_ProfileFragment"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:textColor="@color/black"
+                    android:id="@+id/userName"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@string/UN_ProfileFragment"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
                 <TextView
                     android:layout_marginTop="2dp"
                     android:text="REF: 926A32J65R"

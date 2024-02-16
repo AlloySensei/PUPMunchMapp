@@ -28,7 +28,7 @@ public class MainNavigationC extends AppCompatActivity {
                 } else if (itemId == R.id.search) {
                     replaceFragment(new SearchFragment());
                 } else if (itemId == R.id.orders) {
-                        replaceFragment(new OrdersFragment());
+                    replaceFragment(new OrdersFragment());
                 } else if (itemId == R.id.userprofile) {
                     replaceFragment(new UserProfileFragment());
                 }

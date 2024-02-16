@@ -128,6 +128,11 @@ public class OrdersFragment extends Fragment {
                                         public void onSuccess(DocumentReference documentReference) {
                                             // Order placed successfully
                                             Toast.makeText(getContext(), "Order placed successfully!", Toast.LENGTH_SHORT).show();
+
+                                            managmentCart.clearCart();
+                                            // Update the UI
+                                            initList();
+                                            calculateCart();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {

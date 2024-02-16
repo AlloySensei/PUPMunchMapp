@@ -1,4 +1,4 @@
-package com.example.ui_pupmunchmapp;
+/*package com.example.ui_pupmunchmapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -57,4 +57,4 @@ public class CartActivity extends AppCompatActivity {
     private void setVariable() {
         binding.backBtn.setOnClickListener(v -> finish());
     }
-}
+}*/

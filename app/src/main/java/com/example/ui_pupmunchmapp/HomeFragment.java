@@ -89,7 +89,7 @@ public class HomeFragment extends Fragment {
     private void setVariable() {
         logoutBtn.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(getContext(), LoginPage.class));
+            startActivity(new Intent(getContext(), PreLogin.class));
         });
 
     }

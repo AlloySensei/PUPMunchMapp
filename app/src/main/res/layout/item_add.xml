@@ -62,9 +62,6 @@
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
-
-
-
         </RelativeLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -101,9 +98,6 @@
                     android:layout_height="wrap_content"
                     tools:ignore="RtlCompat" />
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

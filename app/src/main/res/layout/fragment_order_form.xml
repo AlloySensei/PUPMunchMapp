@@ -147,7 +147,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="20dp"
                             android:text="@string/quantity"
                             android:textSize="15sp"
                             android:textStyle="bold|italic"
@@ -303,7 +303,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="20dp"
-                        android:text="@string/btnPlaceOrder"
+                        android:text="@string/btnConfirmOrder"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>
             </LinearLayout>

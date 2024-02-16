@@ -9,6 +9,15 @@
     android:background="@drawable/gradientbg"
     tools:context=".OrderDetails">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/wavef5"
+        android:layout_marginBottom="-5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
     <TextView
         android:id="@+id/titleOrderDetails"
         android:layout_width="wrap_content"
@@ -23,165 +32,184 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/titleStallName"
-        android:layout_width="140dp"
+    <LinearLayout
+        android:id="@+id/detailsContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/stallName"
-        android:textColor="@color/thirdColor"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.10"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleOrderDetails" />
+        app:layout_constraintTop_toBottomOf="@id/titleOrderDetails">
 
-    <TextView
-        android:id="@+id/titleRefNum"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/orderRefNum"
-        android:textColor="@color/thirdColor"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.10"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleStallName" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/grey_background">
 
-    <TextView
-        android:id="@+id/titleCustomerName"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/customerName"
-        android:textColor="@color/thirdColor"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.10"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleRefNum" />
+            <TextView
+                android:id="@+id/titleStallName"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="@string/stallName"
+                android:textSize="12sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/titleOrderDate"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/orderDate"
-        android:textColor="@color/thirdColor"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.10"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleCustomerName" />
+            <TextView
+                android:id="@+id/titleRefNum"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/orderRefNum"
+                android:textSize="12sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleStallName" />
 
-    <TextView
-        android:id="@+id/titleOrderTime"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/orderTime"
-        android:textColor="@color/thirdColor"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.10"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleOrderDate" />
+            <TextView
+                android:id="@+id/titleCustomerName"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/customerName"
+                android:textSize="12sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleRefNum" />
 
-    <TextView
-        android:id="@+id/displayStallName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/displaytxtbg"
-        android:padding="5dp"
-        android:text="@string/txtOrderStall"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/titleStallName"
-        app:layout_constraintTop_toBottomOf="@+id/titleOrderDetails" />
+            <TextView
+                android:id="@+id/titleOrderDate"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/orderDate"
+                android:textSize="12sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleCustomerName" />
 
-    <TextView
-        android:id="@+id/displayOrderRefNum"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/displaytxtbg"
-        android:padding="5dp"
-        android:text="@string/txtOrderRefNum"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/titleRefNum"
-        app:layout_constraintTop_toBottomOf="@+id/displayStallName" />
+            <TextView
+                android:id="@+id/titleOrderTime"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/orderTime"
+                android:textSize="12sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleOrderDate"
+                app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/displayCustomerName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/displaytxtbg"
-        android:padding="5dp"
-        android:text="@string/txtCustomerName"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/titleCustomerName"
-        app:layout_constraintTop_toBottomOf="@+id/displayOrderRefNum" />
+            <TextView
+                android:id="@+id/displayStallName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/displaytxtbg"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/titleStallName"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/displayOrderDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/displaytxtbg"
-        android:padding="5dp"
-        android:text="@string/txtOrderDate"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/titleOrderDate"
-        app:layout_constraintTop_toBottomOf="@+id/displayCustomerName" />
+            <TextView
+                android:id="@+id/displayOrderRefNum"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/displaytxtbg"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/titleRefNum"
+                app:layout_constraintTop_toBottomOf="@+id/displayStallName" />
 
-    <TextView
-        android:id="@+id/displayOrderTime"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/displaytxtbg"
-        android:padding="5dp"
-        android:text="@string/txtOrderTime"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/titleOrderTime"
-        app:layout_constraintTop_toBottomOf="@+id/displayOrderDate" />
+            <TextView
+                android:id="@+id/displayCustomerName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/displaytxtbg"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/titleCustomerName"
+                app:layout_constraintTop_toBottomOf="@+id/displayOrderRefNum" />
+
+            <TextView
+                android:id="@+id/displayOrderDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/displaytxtbg"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/titleOrderDate"
+                app:layout_constraintTop_toBottomOf="@+id/displayCustomerName" />
+
+            <TextView
+                android:id="@+id/displayOrderTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/displaytxtbg"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/titleOrderTime"
+                app:layout_constraintTop_toBottomOf="@+id/displayOrderDate"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="90dp"
         android:scrollbars="vertical"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/displayOrderTime"
+        app:layout_constraintTop_toBottomOf="@+id/detailsContainer"
         app:layout_constraintVertical_bias="1.0">
 
         <TableLayout

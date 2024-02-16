@@ -2,6 +2,11 @@
     <string name="app_name">UI_PUPMunchMapp</string>
     <string name="appName">PUP MunchMapp</string>
     <string name="tagLine">The food app for PUPians.</string>
+    <!--For PreLogin page-->
+    <string name="welcomeTo">Welcome to</string>
+    <string name="iAm">I am a...</string>
+    <string name="customer">Customer</string>
+    <string name="stallSeller">Food stall seller</string>
     <!--For log in page-->
     <string name="btntxtLogin">LOG IN</string>
     <string name="txtForgotPassword">Forgot password</string>
@@ -90,6 +95,7 @@
     <string name="email2">Email:</string>
     <string name="socials">Social media page:</string>
     <string name="owner">Store owner:</string>
+    <string name="btnConfirmOrder">CONFIRM ORDER</string>
 
     <!--strings below are from themes.xml-->
     <string name="appname">Navigation Drawer</string>
